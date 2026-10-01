@@ -1,0 +1,1421 @@
+@import "tailwindcss";
+
+:root {
+  --sand: #e7d8c3;
+  --cream: #f5efe5;
+  --sun: #e99a45;
+  --ocean: #315c6e;
+  --deep-ocean: #193b49;
+  --espresso: #29231f;
+  --blonde: #d9b978;
+  --sky: #a9c6cf;
+  --white: #faf7f0;
+  --grey: #776e66;
+  --line: rgba(41, 35, 31, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--white);
+  color: var(--espresso);
+  font-family: var(--font-sans), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  scroll-margin-top: 82px;
+}
+
+::selection {
+  background: var(--ocean);
+  color: white;
+}
+
+/* HEADER */
+
+.header {
+  position: relative;
+  z-index: 100;
+  height: 82px;
+  padding: 0 4vw;
+  border-bottom: 1px solid var(--line);
+  background: rgba(250, 247, 240, 0.97);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.logo,
+.footer-logo {
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.07em;
+}
+
+.logo span,
+.footer-logo span {
+  margin-top: 5px;
+  display: block;
+  color: var(--ocean);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 34px;
+}
+
+.desktop-nav a {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.header-cta {
+  justify-self: end;
+  width: 140px;
+  height: 44px;
+  padding: 0 14px;
+  background: var(--espresso);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.menu,
+.mobile-menu {
+  display: none;
+}
+
+/* HERO */
+
+.hero {
+  padding: 22px 4vw 0;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: var(--grey);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.hero-meta span:nth-child(2) {
+  text-align: center;
+}
+
+.hero-meta span:last-child {
+  text-align: right;
+}
+
+.hero-main {
+  min-height: 700px;
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 6vw;
+  align-items: center;
+}
+
+.eyebrow,
+.micro-label {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.hero h1 {
+  margin-top: 25px;
+  font-size: clamp(76px, 8.3vw, 135px);
+  font-weight: 800;
+  line-height: 0.72;
+  letter-spacing: -0.09em;
+}
+
+.hero h1 em,
+.about h2 em,
+.blonde h2 em,
+.adventure h2 em,
+.travel h2 em,
+.road h2 em,
+.instagram h2 em,
+.booking h2 em {
+  color: var(--ocean);
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+}
+
+.hero-intro {
+  max-width: 530px;
+  margin-top: 45px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 35px;
+  align-items: end;
+}
+
+.hero-intro p {
+  max-width: 310px;
+  color: var(--grey);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.text-link {
+  width: fit-content;
+  padding-bottom: 7px;
+  border-bottom: 1px solid currentColor;
+  display: flex;
+  gap: 30px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hero-art {
+  position: relative;
+  height: 610px;
+  overflow: hidden;
+  background: var(--sky);
+}
+
+.sun {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  left: calc(50% - 145px);
+  top: 70px;
+  border-radius: 50%;
+  background: var(--sun);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun span {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 100px;
+  font-style: italic;
+}
+
+.ocean {
+  position: absolute;
+  width: 130%;
+  left: -15%;
+  border-radius: 50%;
+}
+
+.ocean-one {
+  height: 210px;
+  bottom: 70px;
+  background: var(--ocean);
+  transform: rotate(-4deg);
+}
+
+.ocean-two {
+  height: 180px;
+  bottom: -10px;
+  background: var(--deep-ocean);
+  transform: rotate(4deg);
+}
+
+.ocean-three {
+  height: 120px;
+  bottom: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transform: rotate(2deg);
+}
+
+.hair-shape {
+  position: absolute;
+  z-index: 5;
+  width: 230px;
+  height: 370px;
+  left: calc(50% - 115px);
+  bottom: 20px;
+}
+
+.hair-line {
+  position: absolute;
+  width: 90px;
+  height: 350px;
+  border: 10px solid var(--blonde);
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 50%;
+}
+
+.line-one {
+  left: 0;
+  transform: rotate(17deg);
+}
+
+.line-two {
+  left: 38px;
+  transform: rotate(8deg);
+}
+
+.line-three {
+  left: 70px;
+}
+
+.line-four {
+  right: 38px;
+  transform: rotate(-8deg);
+}
+
+.line-five {
+  right: 0;
+  transform: rotate(-17deg);
+}
+
+.art-caption {
+  position: absolute;
+  z-index: 7;
+  left: 18px;
+  right: 18px;
+  bottom: 17px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.hero-bottom {
+  min-height: 70px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--grey);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+/* TICKER */
+
+.ticker {
+  overflow: hidden;
+  padding: 17px 0;
+  background: var(--ocean);
+  color: white;
+}
+
+.ticker > div {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.ticker i {
+  color: var(--sand);
+  font-style: normal;
+}
+
+/* ABOUT */
+
+.about {
+  padding: 125px 5vw;
+  display: grid;
+  grid-template-columns: 0.18fr 1fr;
+  gap: 5vw;
+}
+
+.section-index {
+  color: var(--grey);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.section-index span {
+  margin-bottom: 7px;
+  display: block;
+  color: var(--ocean);
+}
+
+.about h2 {
+  margin-top: 25px;
+  font-size: clamp(75px, 8vw, 130px);
+  font-weight: 800;
+  line-height: 0.72;
+  letter-spacing: -0.09em;
+}
+
+.about-copy {
+  max-width: 700px;
+  margin: 60px 0 0 auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about-copy p {
+  color: var(--grey);
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+.about-copy .lead {
+  color: var(--espresso);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+/* BLONDE */
+
+.blonde {
+  min-height: 800px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.blonde-art {
+  position: relative;
+  min-height: 800px;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.blonde-top {
+  position: absolute;
+  z-index: 5;
+  left: 22px;
+  right: 22px;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.blonde-sun {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  left: calc(50% - 165px);
+  top: calc(50% - 165px);
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.strand {
+  position: absolute;
+  z-index: 3;
+  width: 180px;
+  height: 760px;
+  top: 40px;
+  border: 14px solid var(--blonde);
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 50%;
+}
+
+.strand-one {
+  left: 2%;
+  transform: rotate(18deg);
+}
+
+.strand-two {
+  left: 20%;
+  transform: rotate(9deg);
+}
+
+.strand-three {
+  left: calc(50% - 90px);
+}
+
+.strand-four {
+  right: 20%;
+  transform: rotate(-9deg);
+}
+
+.strand-five {
+  right: 2%;
+  transform: rotate(-18deg);
+}
+
+.blonde-art > p {
+  position: absolute;
+  z-index: 4;
+  left: 20px;
+  bottom: -20px;
+  color: rgba(41, 35, 31, 0.15);
+  font-size: 130px;
+  font-weight: 800;
+  letter-spacing: -0.09em;
+}
+
+.blonde-copy {
+  padding: 8vw 6vw;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blonde-copy > span {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.blonde-copy .micro-label {
+  margin-top: 75px;
+  color: var(--grey);
+}
+
+.blonde-copy h2 {
+  margin-top: 20px;
+  font-size: clamp(70px, 7vw, 110px);
+  font-weight: 800;
+  line-height: 0.7;
+  letter-spacing: -0.09em;
+}
+
+.body-copy {
+  max-width: 440px;
+  margin: 40px 0 35px;
+  color: var(--grey);
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+/* ADVENTURE */
+
+.adventure {
+  min-height: 800px;
+  padding: 50px 5vw 85px;
+  background: var(--deep-ocean);
+  color: white;
+}
+
+.adventure-meta {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.adventure-main {
+  margin-top: 80px;
+}
+
+.adventure-main > p {
+  color: var(--sand);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.adventure h2 {
+  margin-top: 20px;
+  font-size: clamp(90px, 10vw, 160px);
+  font-weight: 800;
+  line-height: 0.67;
+  letter-spacing: -0.09em;
+}
+
+.adventure h2 em {
+  color: var(--sun);
+}
+
+.adventure-foot {
+  max-width: 760px;
+  margin: 70px 0 0 auto;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 70px;
+  align-items: center;
+}
+
+.adventure-foot > p {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+.compass {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+}
+
+.compass span {
+  position: absolute;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.compass span:nth-child(1) {
+  left: 50%;
+  top: 8px;
+}
+
+.compass span:nth-child(2) {
+  right: 8px;
+  top: 50%;
+}
+
+.compass span:nth-child(3) {
+  left: 50%;
+  bottom: 8px;
+}
+
+.compass span:nth-child(4) {
+  left: 8px;
+  top: 50%;
+}
+
+.compass i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: var(--sun);
+  font-size: 38px;
+  font-style: normal;
+  transform: translate(-50%, -50%);
+}
+
+/* TRAVEL */
+
+.travel {
+  padding: 120px 5vw;
+}
+
+.travel-heading {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 5vw;
+}
+
+.travel-heading h2 {
+  margin-top: 20px;
+  font-size: clamp(75px, 8vw, 130px);
+  font-weight: 800;
+  line-height: 0.7;
+  letter-spacing: -0.09em;
+}
+
+.locations {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.locations article {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+}
+
+.kc-card {
+  background: var(--sand);
+}
+
+.oahu-card {
+  background: var(--sky);
+}
+
+.location-number {
+  position: absolute;
+  z-index: 5;
+  left: 20px;
+  top: 18px;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.city-art,
+.island-art {
+  position: absolute;
+  inset: 0;
+}
+
+.kc-sun,
+.island-sun {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  left: calc(50% - 115px);
+  top: 90px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.kc-line {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 150px;
+  border-top: 3px solid var(--espresso);
+  border-radius: 50%;
+}
+
+.line-a {
+  top: 230px;
+}
+
+.line-b {
+  top: 270px;
+}
+
+.line-c {
+  top: 310px;
+}
+
+.island-sun {
+  background: #f0c374;
+}
+
+.island {
+  position: absolute;
+  z-index: 2;
+  width: 55%;
+  height: 120px;
+  left: 22.5%;
+  top: 260px;
+  border-radius: 50% 50% 20% 20%;
+  background: var(--deep-ocean);
+  transform: rotate(-5deg);
+}
+
+.island-wave {
+  position: absolute;
+  width: 90%;
+  height: 100px;
+  left: 5%;
+  border-top: 3px solid white;
+  border-radius: 50%;
+}
+
+.wave-a {
+  top: 350px;
+}
+
+.wave-b {
+  top: 390px;
+}
+
+.location-info {
+  position: absolute;
+  z-index: 5;
+  left: 25px;
+  right: 25px;
+  bottom: 22px;
+}
+
+.location-info > span {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.location-info h3 {
+  margin-top: 8px;
+  font-size: clamp(48px, 5vw, 75px);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.07em;
+}
+
+.location-info > p {
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+  color: rgba(41, 35, 31, 0.16);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 100px;
+  font-style: italic;
+}
+
+.travel-note {
+  max-width: 580px;
+  margin: 35px 0 0 auto;
+  color: var(--grey);
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+/* ROAD */
+
+.road {
+  min-height: 780px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.road-copy {
+  padding: 8vw 5vw;
+  background: var(--espresso);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.road-copy > span {
+  color: var(--sand);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.road h2 {
+  margin-top: 45px;
+  font-size: clamp(70px, 7vw, 110px);
+  font-weight: 800;
+  line-height: 0.7;
+  letter-spacing: -0.09em;
+}
+
+.road h2 em {
+  color: var(--sun);
+}
+
+.road-copy > p {
+  max-width: 420px;
+  margin: 40px 0 35px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+.light-link {
+  color: white;
+}
+
+.road-art {
+  position: relative;
+  min-height: 780px;
+  overflow: hidden;
+  background: var(--sky);
+}
+
+.road-sky {
+  position: absolute;
+  inset: 0;
+}
+
+.road-sun {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  left: calc(50% - 135px);
+  top: 100px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.mountain {
+  position: absolute;
+  bottom: 190px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.mountain-one {
+  width: 70%;
+  height: 300px;
+  left: -10%;
+  background: var(--ocean);
+}
+
+.mountain-two {
+  width: 80%;
+  height: 350px;
+  right: -20%;
+  background: var(--deep-ocean);
+}
+
+.highway {
+  position: absolute;
+  width: 42%;
+  height: 400px;
+  left: 29%;
+  bottom: -70px;
+  background: var(--espresso);
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+}
+
+.highway span {
+  position: absolute;
+  width: 4px;
+  height: 260px;
+  left: calc(50% - 2px);
+  top: 70px;
+  background: var(--sand);
+}
+
+.road-art > p {
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 150px;
+  font-weight: 800;
+  letter-spacing: -0.09em;
+}
+
+/* INSTAGRAM */
+
+.instagram {
+  padding: 105px 5vw;
+  background: var(--cream);
+}
+
+.instagram-top {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: var(--grey);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.instagram-main {
+  margin-top: 65px;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 8vw;
+  align-items: end;
+}
+
+.instagram h2 {
+  margin-top: 20px;
+  font-size: clamp(75px, 8vw, 130px);
+  font-weight: 800;
+  line-height: 0.7;
+  letter-spacing: -0.09em;
+}
+
+.instagram-card {
+  min-height: 180px;
+  padding: 25px;
+  border: 1px solid var(--espresso);
+  display: grid;
+  grid-template-columns: 65px 1fr 30px;
+  align-items: center;
+}
+
+.instagram-card > span {
+  color: var(--ocean);
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.instagram-card small {
+  display: block;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.instagram-card strong {
+  margin-top: 8px;
+  display: block;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.instagram-card i {
+  font-size: 20px;
+  font-style: normal;
+}
+
+/* BOOKING */
+
+.booking {
+  position: relative;
+  min-height: 750px;
+  padding: 50px 5vw 90px;
+  overflow: hidden;
+  background: var(--ocean);
+  color: white;
+}
+
+.booking-meta {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.booking-main {
+  position: relative;
+  z-index: 3;
+  margin-top: 80px;
+}
+
+.booking-main > p:first-child {
+  color: var(--sand);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.booking h2 {
+  margin-top: 20px;
+  font-size: clamp(90px, 10vw, 160px);
+  font-weight: 800;
+  line-height: 0.65;
+  letter-spacing: -0.095em;
+}
+
+.booking h2 em {
+  color: var(--sun);
+}
+
+.booking-copy {
+  max-width: 440px;
+  margin-top: 45px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+.booking-button {
+  width: min(100%, 520px);
+  min-height: 75px;
+  margin-top: 35px;
+  padding: 0 22px;
+  background: var(--espresso);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.booking-button i {
+  font-size: 20px;
+  font-style: normal;
+}
+
+.booking-sun {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -100px;
+  bottom: -130px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+}
+
+.booking-sun::before,
+.booking-sun::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.booking-sun::before {
+  inset: 55px;
+}
+
+.booking-sun::after {
+  inset: 110px;
+}
+
+/* FOOTER */
+
+footer {
+  min-height: 135px;
+  padding: 30px 5vw;
+  background: var(--espresso);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+footer > p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+footer > a:last-child {
+  justify-self: end;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* TABLET / MOBILE MENU */
+
+@media (max-width: 1050px) {
+  .header {
+    height: 74px;
+    padding: 0 20px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    z-index: 160;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    display: block;
+  }
+
+  .menu span {
+    position: absolute;
+    right: 0;
+    width: 27px;
+    height: 1px;
+    background: var(--espresso);
+    transition: 0.25s ease;
+  }
+
+  .menu span:first-child {
+    top: 17px;
+  }
+
+  .menu span:last-child {
+    width: 19px;
+    top: 25px;
+  }
+
+  .menu.active span {
+    background: white;
+  }
+
+  .menu.active span:first-child {
+    top: 22px;
+    transform: rotate(45deg);
+  }
+
+  .menu.active span:last-child {
+    width: 27px;
+    top: 22px;
+    transform: rotate(-45deg);
+  }
+
+  .menu-open .logo {
+    position: relative;
+    z-index: 160;
+    color: white;
+  }
+
+  .menu-open .logo span {
+    color: var(--sun);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    z-index: 140;
+    inset: 0;
+    padding: 100px 22px 30px;
+    background: var(--deep-ocean);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+  }
+
+  .mobile-menu.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--sand);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .mobile-menu nav {
+    margin: auto 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-menu nav a {
+    min-height: 68px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    font-size: 37px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+  }
+
+  .mobile-menu nav a span {
+    width: 50px;
+    color: var(--sun);
+    font-size: 7px;
+  }
+
+  .mobile-cta {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  section {
+    scroll-margin-top: 74px;
+  }
+
+  .hero {
+    padding: 18px 18px 0;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-meta span:nth-child(2) {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 20.5vw;
+  }
+
+  .hero-main {
+    min-height: auto;
+    padding: 70px 0 45px;
+  }
+
+  .hero-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    height: 520px;
+  }
+
+  .sun {
+    width: 230px;
+    height: 230px;
+    left: calc(50% - 115px);
+  }
+
+  .about {
+    padding: 85px 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .about h2 {
+    margin-top: 35px;
+    font-size: 19vw;
+  }
+
+  .about-copy {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .blonde {
+    grid-template-columns: 1fr;
+  }
+
+  .blonde-art {
+    min-height: 560px;
+  }
+
+  .blonde-art > p {
+    font-size: 85px;
+  }
+
+  .blonde-copy {
+    padding: 85px 18px;
+  }
+
+  .blonde-copy h2 {
+    font-size: 19vw;
+  }
+
+  .adventure {
+    min-height: 700px;
+    padding: 45px 18px 75px;
+  }
+
+  .adventure h2 {
+    font-size: 21vw;
+  }
+
+  .adventure-foot {
+    grid-template-columns: 1fr;
+  }
+
+  .travel {
+    padding: 85px 18px;
+  }
+
+  .travel-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-heading h2 {
+    margin-top: 35px;
+    font-size: 18vw;
+  }
+
+  .locations {
+    grid-template-columns: 1fr;
+  }
+
+  .locations article {
+    min-height: 500px;
+  }
+
+  .road {
+    grid-template-columns: 1fr;
+  }
+
+  .road-copy {
+    padding: 85px 18px;
+  }
+
+  .road h2 {
+    font-size: 19vw;
+  }
+
+  .road-art {
+    min-height: 600px;
+  }
+
+  .instagram {
+    padding: 85px 18px;
+  }
+
+  .instagram-main {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram h2 {
+    font-size: 18vw;
+  }
+
+  .instagram-card {
+    min-height: 150px;
+    grid-template-columns: 50px 1fr 25px;
+  }
+
+  .instagram-card strong {
+    font-size: 22px;
+  }
+
+  .booking {
+    min-height: 690px;
+    padding: 50px 18px 75px;
+  }
+
+  .booking h2 {
+    font-size: 21vw;
+  }
+
+  .booking-sun {
+    width: 300px;
+    height: 300px;
+  }
+
+  footer {
+    padding: 40px 18px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: auto;
+  }
+
+  footer > a:last-child {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-menu nav a {
+    font-size: 32px;
+  }
+
+  .instagram-card strong {
+    font-size: 18px;
+  }
+}
